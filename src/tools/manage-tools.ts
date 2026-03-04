@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // Copyright (C) 2026 Giancarlo Erra - Altaire Limited
 
-import { QDRANT_HOST, QDRANT_MODE, QDRANT_PORT, QDRANT_URL } from "../constants.js";
+import { QDRANT_HOST, QDRANT_MODE, QDRANT_PORT, QDRANT_URL, SOCRATICODE_VERSION } from "../constants.js";
 import { getArtifactStatusSummary } from "../services/context-artifacts.js";
 import { isDockerAvailable, isQdrantImagePresent, isQdrantRunning } from "../services/docker.js";
 import { getEmbeddingConfig } from "../services/embedding-config.js";
@@ -235,7 +235,7 @@ export async function handleManageTool(
         "3. codebase_graph_query to explore dependencies.",
         "4. codebase_context_search for schemas, API specs, configs.",
         "",
-        "v1.0.0 · © 2026 Giancarlo Erra — Altaire Limited · AGPL-3.0",
+        `v${SOCRATICODE_VERSION} · © 2026 Giancarlo Erra — Altaire Limited · AGPL-3.0`,
         "https://github.com/giancarloerra/socraticode",
       ].join("\n");
     }

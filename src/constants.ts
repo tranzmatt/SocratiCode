@@ -1,5 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 // Copyright (C) 2026 Giancarlo Erra - Altaire Limited
+
+import { createRequire } from "node:module";
+
+// ── Package metadata ─────────────────────────────────────────────────────
+const esmRequire = createRequire(import.meta.url);
+const pkg = esmRequire("../package.json") as { version: string };
+export const SOCRATICODE_VERSION: string = pkg.version;
+
 // ── Embedding configuration ──────────────────────────────────────────────
 // Embedding model and dimensions are now configured via environment variables.
 // See src/services/embedding-config.ts for OLLAMA_MODE, OLLAMA_URL,

@@ -5,6 +5,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import { SOCRATICODE_VERSION } from "./constants.js";
 import { logger, setMcpLogSender } from "./services/logger.js";
 import { autoResumeIndexedProjects, gracefulShutdown } from "./services/startup.js";
 import { handleContextTool } from "./tools/context-tools.js";
@@ -16,7 +17,7 @@ import { handleQueryTool } from "./tools/query-tools.js";
 const server = new McpServer(
   {
     name: "socraticode",
-    version: "1.0.0",
+    version: SOCRATICODE_VERSION,
   },
   {
     capabilities: {
